@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./stylesheet/main.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>Client Tracker</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <header>
+        <h1 class="d-flex justify-content-center pt-4 pb-3">Client Tracker</h1>
+      </header>
+
+      <main>
+        <div class="content-wrapper border mt-4 mb-4">
+          <div class="form-wrapper">
+            <ul class="mt-3 mb-3 form-text">
+              How to submit a Dispose Record ?
+              <li class="ms-4">* fields are mandatory.</li>
+              <li class="ms-4">Leave all 3 follow up field.</li>
+              <li class="ms-4">Click on Done button.</li>
+              <li class="ms-4">You successfully created a Dispose Record.</li>
+            </ul>
+            <ul class="mt-3 mb-3 form-text">
+              How to submit a Follow Up Record ?
+              <li class="ms-4">* fields are mandatory.</li>
+              <li class="ms-4">Click on follow up button.</li>
+              <li class="ms-4">You successfully created a Follow Up Record.</li>
+            </ul>
+
+            <form class="main-form">
+              <div class="form-floating m-2 mb-4">
+                <input
+                  type="number"
+                  name="opportunityId"
+                  class="form-control opportunity-id"
+                  id="floatingInput"
+                  placeholder="Opportunity Id"
+                  required
+                />
+                <label for="floatingInput">Opportunity Id</label>
+              </div>
+
+              <div class="form-floating m-2 mb-4">
+                <input
+                  type="text"
+                  name="executiveName"
+                  class="form-control executive-name"
+                  id="floatingInput"
+                  placeholder="Executive Name"
+                  value=""
+                  required
+                />
+                <label for="floatingInput">Executive Name</label>
+              </div>
+
+              <div class="form-floating m-2 mb-4">
+                <input
+                  type="text"
+                  name="teamLeader"
+                  class="form-control team-leader"
+                  id="floatingInput"
+                  placeholder="Team Leader"
+                  value=""
+                  required
+                />
+                <label for="floatingInput">Team Leader</label>
+              </div>
+
+              <div class="form-floating m-2 mb-4">
+                <input
+                  type="text"
+                  name="customerName"
+                  class="form-control customer-name"
+                  id="floatingInput"
+                  placeholder="Customer Name"
+                  required
+                />
+                <label for="floatingInput">Customer Name</label>
+              </div>
+
+              <div class="form-floating m-2 mb-4">
+                <select
+                  class="form-select lead-stage"
+                  id="floatingSelect"
+                  aria-label="Lead Stage"
+                  required
+                >
+                  <option selected>Select....</option>
+                  <option value="Mobile Verify">Mobile Verify</option>
+                  <option value="Pan & Bank">Pan & Bank</option>
+                  <option value="E-Sign">E-Sign</option>
+                  <option value="Other Objection">Other Objection</option>
+                  <option value="Objection">Objection</option>
+                </select>
+                <label for="floatingSelect">Lead Stage</label>
+              </div>
+
+              <div class="form-floating m-2 mb-4">
+                <select
+                  class="form-select lead-source"
+                  id="floatingSelect"
+                  aria-label="Lead Source"
+                  required
+                >
+                  <option selected>Select....</option>
+                  <option value="Website">Website</option>
+                  <option value="Android Native">Android Native</option>
+                  <option value="IOS Native">IOS Native</option>
+                  <option value="Google Search">Google Search</option>
+                  <option value="Google Pay">Google Pay</option>
+                  <option value="Phonepe">Phonepe</option>
+                  <option value="Top 10 Broker">Top 10 Broker</option>
+                  <option value="Reference">Reference</option>
+                </select>
+                <label for="floatingSelect">Lead Source</label>
+              </div>
+
+              <div class="form-floating m-2 mb-4">
+                <input
+                  type="date"
+                  name="calledDate"
+                  class="form-control called-date"
+                  id="floatingInput"
+                  placeholder="Called Date"
+                  required
+                />
+                <label for="floatingInput">Called Date</label>
+              </div>
+
+              <div class="form-floating m-2 mb-4">
+                <select
+                  class="form-select follow-up-remark"
+                  id="floatingSelect"
+                  aria-label="Follow Up Remark"
+                >
+                  <option selected>Select....</option>
+                  <option value="Out of Station">Out of Station</option>
+                  <option value="Pitch Done">Pitch Done</option>
+                  <option value="Pitch Not Done">Pitch Not Done</option>
+                  <option value="Not Connected">Not Connected</option>
+                  <option value="Request Follow Up">Request Follow Up</option>
+                  <option value="Aahaar Not Link">Aahaar Not Link</option>
+                </select>
+                <label for="floatingSelect">Follow Up Remark</label>
+              </div>
+
+              <div class="form-floating m-2 mb-4">
+                <input
+                  type="date"
+                  name="followUpDate"
+                  class="form-control follow-up-date"
+                  id="floatingInput"
+                  placeholder="Follow Up Date"
+                />
+                <label for="floatingInput">Follow Up Date</label>
+              </div>
+
+              <div class="form-floating m-2 mb-3">
+                <input
+                  type="time"
+                  name="followUpTime"
+                  class="form-control follow-up-time"
+                  id="floatingInput"
+                  placeholder="Follow Up Time"
+                />
+                <label for="floatingInput">Follow Up Time</label>
+              </div>
+
+              <div class="d-flex justify-content-end mb-3">
+                <input
+                  type="submit"
+                  class="btn btn-danger follow-up-btn"
+                  value="Follow Up"
+                />
+
+                <input
+                  type="submit"
+                  class="btn btn-primary ms-2 me-2 done-btn"
+                  value="Done"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="data-table">
+          <p>Disposed Data</p>
+          <div class="diposed-data-table border overflow-auto p-2 pb-4 mb-4">
+            <table>
+              <tr>
+                <!-- <th>Sr. No</th> -->
+                <th>Opportunity Id</th>
+                <th>Executive Name</th>
+                <th>Team Leader</th>
+                <th>Customer Name</th>
+                <th>Lead Stage</th>
+                <th>Lead Source</th>
+                <th>Called Date</th>
+                <th>Disposed Date</th>
+              </tr>
+            </table>
+            <button class="btn btn-primary disposed-export-btn">Export</button>
+          </div>
+
+          <p>Follow Up Data</p>
+          <div class="follow-up-data-table border overflow-auto p-2">
+            <table>
+              <tr>
+                <!-- <th>Sr. No</th> -->
+                <th>Opportunity Id</th>
+                <th>Executive Name</th>
+                <th>Team Leader</th>
+                <th>Customer Name</th>
+                <th>Lead Stage</th>
+                <th>Lead Source</th>
+                <th>Called Date</th>
+                <th>Follow Up Remark</th>
+                <th>Follow Up Date</th>
+                <th>Follow Up Time</th>
+              </tr>
+            </table>
+            <button class="btn btn-primary follow-up-export-btn">Export</button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <template class="disposed-data-template">
+      <tr>
+        <!-- <td class="disposed-sr-no"></td> -->
+        <td class="disposed-opportunity-id"></td>
+        <td class="disposed-executive-name"></td>
+        <td class="disposed-team-leader"></td>
+        <td class="disposed-customer-name"></td>
+        <td class="disposed-lead-stage"></td>
+        <td class="disposed-lead-source"></td>
+        <td class="disposed-called-date"></td>
+        <td class="disposed-disposed-date"></td>
+      </tr>
+    </template>
+
+    <template class="follow-up-data-template">
+      <tr>
+        <!-- <td class="follow-sr-no"></td> -->
+        <td class="follow-opportunity-id"></td>
+        <td class="follow-executive-name"></td>
+        <td class="follow-team-leader"></td>
+        <td class="follow-customer-name"></td>
+        <td class="follow-lead-stage"></td>
+        <td class="follow-lead-source"></td>
+        <td class="follow-called-date"></td>
+        <td class="follow-follow-up-remark"></td>
+        <td class="follow-follow-up-date"></td>
+        <td class="follow-follow-up-time"></td>
+        <td>
+          <button class="btn btn-primary follow-dispose-btn">Dispose</button>
+        </td>
+      </tr>
+    </template>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./javascript/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.1/xlsx.full.min.js"></script>
+  </body>
+</html>

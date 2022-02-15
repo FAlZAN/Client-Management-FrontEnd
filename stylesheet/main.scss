@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+main {
+  .form-wrapper {
+    form {
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+    }
+  }
+
+  .data-table {
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+
+    table {
+      width: 1050px;
+    }
+
+    th,
+    td {
+      width: 150px;
+      text-align: center;
+    }
+  }
+}

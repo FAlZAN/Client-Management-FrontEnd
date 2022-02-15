@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+main .form-wrapper form input::-webkit-outer-spin-button,
+main .form-wrapper form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+main .data-table table,
+main .data-table th,
+main .data-table td {
+  border: 1px solid black;
+}
+
+main .data-table table {
+  width: 1050px;
+}
+
+main .data-table th,
+main .data-table td {
+  width: 150px;
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */
