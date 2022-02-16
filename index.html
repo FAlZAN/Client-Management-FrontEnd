@@ -56,7 +56,7 @@
                   class="form-control executive-name"
                   id="floatingInput"
                   placeholder="Executive Name"
-                  value=""
+                  value="Hemant Toppo"
                   required
                 />
                 <label for="floatingInput">Executive Name</label>
@@ -69,7 +69,7 @@
                   class="form-control team-leader"
                   id="floatingInput"
                   placeholder="Team Leader"
-                  value=""
+                  value="Manoj Viswakarma"
                   required
                 />
                 <label for="floatingInput">Team Leader</label>
@@ -179,12 +179,16 @@
                 <input
                   type="submit"
                   class="btn btn-danger follow-up-btn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
                   value="Follow Up"
                 />
 
                 <input
                   type="submit"
                   class="btn btn-primary ms-2 me-2 done-btn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
                   value="Done"
                 />
               </div>
@@ -193,8 +197,8 @@
         </div>
 
         <div class="data-table">
-          <p>Disposed Data</p>
-          <div class="diposed-data-table border overflow-auto p-2 pb-4 mb-4">
+          <p class="ms-2">Disposed Data Table.</p>
+          <div class="diposed-data-table border overflow-auto p-2 mb-5">
             <table>
               <tr>
                 <!-- <th>Sr. No</th> -->
@@ -208,11 +212,13 @@
                 <th>Disposed Date</th>
               </tr>
             </table>
-            <button class="btn btn-primary disposed-export-btn">Export</button>
+            <button class="btn btn-primary disposed-export-btn mt-2">
+              Export
+            </button>
           </div>
 
-          <p>Follow Up Data</p>
-          <div class="follow-up-data-table border overflow-auto p-2">
+          <p class="ms-2">Follow Up Data Table.</p>
+          <div class="follow-up-data-table border overflow-auto p-2 mb-4">
             <table>
               <tr>
                 <!-- <th>Sr. No</th> -->
@@ -228,10 +234,29 @@
                 <th>Follow Up Time</th>
               </tr>
             </table>
-            <button class="btn btn-primary follow-up-export-btn">Export</button>
+            <button class="btn btn-primary follow-up-export-btn mt-2">
+              Export
+            </button>
           </div>
         </div>
       </main>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p class="pt-2 pb-2 fs-5"></p>
+            <button
+              type="button"
+              class="btn btn-primary float-end modal-btn"
+              data-bs-dismiss="modal"
+            >
+              Okay
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <template class="disposed-data-template">
@@ -262,7 +287,13 @@
         <td class="follow-follow-up-date"></td>
         <td class="follow-follow-up-time"></td>
         <td>
-          <button class="btn btn-primary follow-dispose-btn">Dispose</button>
+          <button
+            class="btn btn-primary follow-dispose-btn"
+            data-bs-toggle="modal"
+            data-bs-target="#myModal"
+          >
+            Dispose
+          </button>
         </td>
       </tr>
     </template>

@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
-
 main {
   .form-wrapper {
     form {
@@ -25,6 +23,11 @@ main {
     td {
       width: 150px;
       text-align: center;
+    }
+
+    p {
+      font-size: large;
+      font-weight: 700;
     }
   }
 }

@@ -19,6 +19,8 @@ const followUpDataTable = document.querySelector(
   ".follow-up-data-table table tbody"
 );
 const followUpDataTemplate = document.querySelector(".follow-up-data-template");
+const myModal = document.querySelector(".modal p");
+const modalBtn = document.querySelector(".modal-btn");
 
 window.onload = () => {
   retrieve();
@@ -30,7 +32,7 @@ followUpBtn.addEventListener("click", () => {
     e.preventDefault();
   });
 
-  fetch("http://127.0.0.1:4000/api/followup", {
+  fetch("http://localhost:4000/api/followup", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -48,8 +50,21 @@ followUpBtn.addEventListener("click", () => {
       followUpTime: followUpTime.value,
     }),
   })
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((response) => {
+      if (response.status == 200) {
+        response.json();
+        myModal.textContent = "Follow Up Added Successfully.";
+        modalBtn.addEventListener("click", () => {
+          location.reload();
+        });
+      } else {
+        myModal.textContent = "Something went wrong.";
+      }
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => console.log(error));
 });
 
 doneBtn.addEventListener("click", () => {
@@ -57,7 +72,7 @@ doneBtn.addEventListener("click", () => {
     e.preventDefault();
   });
 
-  fetch("http://127.0.0.1:4000/api/disposed", {
+  fetch("http://localhost:4000/api/disposed", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -73,8 +88,21 @@ doneBtn.addEventListener("click", () => {
       disposedDate: calledDate.value.split("-").reverse().join("-"),
     }),
   })
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((response) => {
+      if (response.status == 200) {
+        response.json();
+        myModal.textContent = "Disposition Added Successfully.";
+        modalBtn.addEventListener("click", () => {
+          location.reload();
+        });
+      } else {
+        myModal.textContent = "Something went wrong.";
+      }
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => console.log(error));
 });
 
 //Data Retrieve
@@ -82,8 +110,6 @@ function retrieve() {
   fetch("http://localhost:4000/api/alldisposed")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-
       Object.values(data).forEach((entry) => {
         const disposedDataTemplateClone =
           disposedDataTemplate.content.cloneNode(true).children[0];
@@ -133,8 +159,6 @@ function retrieve() {
   fetch("http://localhost:4000/api/allfollowup")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-
       Object.values(data).forEach((entry) => {
         const followUpDataTemplateClone =
           followUpDataTemplate.content.cloneNode(true).children[0];
@@ -197,7 +221,7 @@ function retrieve() {
             dateInstance.getMonth() + 1
           }-${dateInstance.getFullYear()}`;
 
-          fetch("http://127.0.0.1:4000/api/disposed", {
+          fetch("http://localhost:4000/api/disposed", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -213,12 +237,22 @@ function retrieve() {
               disposedDate: disposedDate,
             }),
           })
-            .then((response) => response.json())
+            .then((response) => {
+              response.json();
+              if (response.status == 200) {
+                myModal.textContent = "Disposition Added Successfully.";
+                modalBtn.addEventListener("click", () => {
+                  location.reload();
+                });
+              } else {
+                myModal.textContent = "Something went wrong.";
+              }
+            })
             .then((data) => {
               console.log(data);
 
               // Delete Request
-              fetch("http://127.0.0.1:4000/api/adocument", {
+              fetch("http://localhost:4000/api/adocument", {
                 method: "DELETE",
                 headers: {
                   "Content-Type": "application/json",

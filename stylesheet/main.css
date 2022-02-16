@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
 main .form-wrapper form input::-webkit-outer-spin-button,
 main .form-wrapper form input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -18,5 +17,10 @@ main .data-table th,
 main .data-table td {
   width: 150px;
   text-align: center;
+}
+
+main .data-table p {
+  font-size: large;
+  font-weight: 700;
 }
 /*# sourceMappingURL=main.css.map */
