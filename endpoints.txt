@@ -1,4 +1,0 @@
-https://client-data-management-server.herokuapp.com/api/followup
-https://client-data-management-server.herokuapp.com/api/disposed
-https://client-data-management-server.herokuapp.com/api/alldisposed
-https://client-data-management-server.herokuapp.com/api/allfollowup
